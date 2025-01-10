@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Card = ({ name, info, price, image }) => {
+const Card = ({ id, name, info, price, image, handelDelete }) => {
   const [exp, setExp] = useState(false);
 
   return (
@@ -24,7 +24,10 @@ const Card = ({ name, info, price, image }) => {
           </p>
         </div>
         <div class="px-6 pt-4 pb-2">
-          <button className="transition ease-in-out text-sm w-full  bg-gray-200 text-gray-800 py-2 rounded hover:bg-green-300">
+          <button
+            className="transition ease-in-out text-sm w-full  bg-gray-200 text-gray-800 py-2 rounded hover:bg-green-300"
+            onClick={() => handelDelete(id)}
+          >
             Not Interested
           </button>
         </div>
