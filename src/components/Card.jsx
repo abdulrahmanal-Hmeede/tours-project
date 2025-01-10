@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Card = ({ name, info, price, image }) => {
+  const [exp, setExp] = useState(false);
+
   return (
     <>
-      <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
+      <div class="relative rounded overflow-hidden shadow-lg transition ease-in-out hover:scale-105 bg-white w-full h-full">
         <img className="w-full" src="" alt="" />
         <div class="absolute top-2 right-2 bg-green-500 text-white font-bold px-3 py-1 rounded-full text-sm">
           {price}
@@ -11,10 +13,18 @@ const Card = ({ name, info, price, image }) => {
         <img className="w-full h-80" src={image} alt="" />
         <div class="px-6 py-4">
           <h2 class="font-bold text-xl mb-2">{name}</h2>
-          <p class="text-gray-700 text-base">{info}</p>
+          <p class="text-gray-700 text-base">
+            {exp ? info : info.substring(0, 200)}
+            <button
+              className="text-green-400 font-bold"
+              onClick={() => setExp(!exp)}
+            >
+              {exp ? " less" : " ...more"}
+            </button>
+          </p>
         </div>
         <div class="px-6 pt-4 pb-2">
-          <button class="text-sm w-full bg-gray-200 text-gray-800 py-2 rounded">
+          <button className="transition ease-in-out text-sm w-full  bg-gray-200 text-gray-800 py-2 rounded hover:bg-green-300">
             Not Interested
           </button>
         </div>

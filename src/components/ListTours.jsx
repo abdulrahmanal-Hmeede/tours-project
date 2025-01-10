@@ -15,8 +15,12 @@ const ListTours = () => {
 
   return (
     <>
+      <h1 className="text-center text-5xl font-bold text-green-500 p-8 pb-3">
+        Our Tours
+      </h1>
+      <div className="w-24 h-1 rounded-sm place-self-center bg-green-600"></div>
       {error && <p>error</p>}
-      <div className="grid grid-cols-3 gap-4 place-items-center">
+      <div className="grid grid-cols-3 gap-14 place-items-center p-10">
         {tours.map((tour) => (
           <Card
             name={tour.name}
