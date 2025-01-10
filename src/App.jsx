@@ -1,7 +1,13 @@
 import "./App.css";
+import Card from "./components/Card";
+import ListTours from "./components/ListTours";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ListTours />
+    </>
+  );
 }
 
 export default App;
